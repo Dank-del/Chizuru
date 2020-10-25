@@ -2,3 +2,4 @@ python-telegram-bot
 nekos.py
 pillow
 requests
+pymongo

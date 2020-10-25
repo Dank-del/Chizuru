@@ -1,9 +1,8 @@
+from Bot.config import Development as Config
 import logging
-import os
 import sys
-import time
 import telegram.ext as tg
-
+import pymongo
 
 StartTime = time.time()
 
@@ -20,10 +19,9 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
         "You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
     )
     quit(1)
-    
-from Bot.config import Development as Config    
-TOKEN = Config.TOKEN    
-    
-    
+
+TOKEN = Config.TOKEN
+MONGO_CLIENT = pymongo.MongoClient(Config.MONGO_URI)
+
 updater = tg.Updater(TOKEN, use_context=True)
 dispatcher = updater.dispatcher
