@@ -8,13 +8,20 @@ from typing import Optional
 
 from telegram import Message, Chat, User
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
-from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler, CallbackContext
+from telegram.ext import (
+    CommandHandler,
+    Filters,
+    MessageHandler,
+    CallbackQueryHandler,
+    CallbackContext,
+)
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
 from Bot import (
     dispatcher,
-    updater,)
+    updater,
+)
 
 StartTime = time.time()
 
@@ -103,9 +110,7 @@ def help(update, context):
             disable_web_page_preview=False,
         )
     else:
-        update.effective_message.reply_text(
-            "do that in pm"
-        )
+        update.effective_message.reply_text("do that in pm")
 
 
 # Kanged from PaperPlane Extended userbot
@@ -163,11 +168,12 @@ def ping(update: Update, context: CallbackContext):
         "PONG!!\n"
         "<b>Time Taken:</b> <code>{}</code>\n"
         "<b>Service uptime:</b> <code>{}</code>".format(telegram_ping, uptime),
-        parse_mode=ParseMode.HTML)
+        parse_mode=ParseMode.HTML,
+    )
 
 
 help_handler = CommandHandler("help", help, pass_args=True)
-CALLBACK_QUERY_HANDLER = CallbackQueryHandler(edit_msg, pattern='help')
+CALLBACK_QUERY_HANDLER = CallbackQueryHandler(edit_msg, pattern="help")
 PING_HANDLER = CommandHandler("ping", ping)
 dispatcher.add_handler(start_handler)
 dispatcher.add_handler(help_handler)

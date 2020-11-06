@@ -1,8 +1,9 @@
 class Config(object):
     LOGGER = True
     TOKEN = ""
-    
-    
+    MONGO_URI = ""
+
+
 class Production(Config):
     LOGGER = True
 

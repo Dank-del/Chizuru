@@ -1,5 +1,3 @@
-
-
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler
 from telegram.ext.dispatcher import run_async
@@ -10,8 +8,12 @@ from Bot import LOGGER, dispatcher, updater
 
 @run_async
 def start(update, context):
-    keyboard = [[InlineKeyboardButton(
-        "Maintained by", url="t.me/dank_as_fuck"), InlineKeyboardButton("Help", callback_data="help")]]
+    keyboard = [
+        [
+            InlineKeyboardButton("Maintained by", url="t.me/dank_as_fuck"),
+            InlineKeyboardButton("Help", callback_data="help"),
+        ]
+    ]
 
     if update.effective_chat.type == "private":
         args = context.args
@@ -21,12 +23,10 @@ def start(update, context):
             timeout=60,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(keyboard)
+            reply_markup=InlineKeyboardMarkup(keyboard),
         )
     else:
-        update.effective_message.reply_text(
-            "Hi!"
-        )
+        update.effective_message.reply_text("Hi!")
 
 
 def main():

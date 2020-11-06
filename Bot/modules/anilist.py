@@ -7,6 +7,7 @@ from telegram.ext.dispatcher import run_async
 
 from Bot import dispatcher
 
+
 def shorten(description, info="anilist.co"):
     msg = ""
     if len(description) > 700:

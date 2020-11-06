@@ -2,8 +2,8 @@ from Bot import MONGO_CLIENT
 from bson.objectid import ObjectId
 from typing import Optional
 
-collection = MONGO_CLIENT['Chizuru']['Users']
-chats_collection = MONGO_CLIENT['Chizuru']["Chats"]
+collection = MONGO_CLIENT["Chizuru"]["Users"]
+chats_collection = MONGO_CLIENT["Chizuru"]["Chats"]
 
 
 def does_user_exist(user: int) -> bool:
