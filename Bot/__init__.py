@@ -3,6 +3,7 @@ import logging
 import sys
 import telegram.ext as tg
 import pymongo
+import time
 
 StartTime = time.time()
 

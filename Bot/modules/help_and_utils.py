@@ -26,10 +26,7 @@ from Bot import (
 StartTime = time.time()
 
 
-PM_START_TEXT = f"""
-Hewwo, uwu >////<.
-Tap on /help to know all my commands!
-"""
+
 
 help_text = """
 *NEKOS API* [.](https://telegra.ph/file/d59eaf89cf934fb2feeec.jpg)
@@ -171,11 +168,9 @@ def ping(update: Update, context: CallbackContext):
         parse_mode=ParseMode.HTML,
     )
 
-
 help_handler = CommandHandler("help", help, pass_args=True)
 CALLBACK_QUERY_HANDLER = CallbackQueryHandler(edit_msg, pattern="help")
 PING_HANDLER = CommandHandler("ping", ping)
-dispatcher.add_handler(start_handler)
 dispatcher.add_handler(help_handler)
 dispatcher.add_handler(CALLBACK_QUERY_HANDLER)
 dispatcher.add_handler(PING_HANDLER)

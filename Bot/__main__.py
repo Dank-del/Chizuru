@@ -2,12 +2,16 @@ from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler
 from telegram.ext.dispatcher import run_async
 
-from Bot.modules import start, anilist, lewd
+from Bot.modules import help_and_utils, anilist, lewd
 from Bot import LOGGER, dispatcher, updater
 
 
 @run_async
 def start(update, context):
+    PM_START_TEXT = f"""
+Hewwo, uwu >////<.
+Tap on /help to know all my commands!
+"""
     keyboard = [
         [
             InlineKeyboardButton("Maintained by", url="t.me/dank_as_fuck"),
