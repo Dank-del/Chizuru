@@ -24,6 +24,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 
 TOKEN = Config.TOKEN
 MONGO_CLIENT = pymongo.MongoClient(Config.MONGO_URI)
+OWNER_ID = Config.OWNER_ID
 
 updater = tg.Updater(TOKEN, use_context=True)
 dispatcher = updater.dispatcher
