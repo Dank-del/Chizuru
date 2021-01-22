@@ -342,6 +342,15 @@ def manga(update, context):
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
 
+__mod_name__= "AniList"
+
+__help__ = """
+*AniList*
+ - /anime: search anime
+ - /character: search character
+ - /manga: search manga
+ - /airing: get anime airing status
+ """
 
 AIRING_HANDLER = CommandHandler("airing", airing)
 ANIME_HANDLER = CommandHandler("anime", anime)
