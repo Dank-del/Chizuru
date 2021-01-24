@@ -12,7 +12,7 @@ import html
 
 IMPORTED = {}
 HELPABLE = {}
-
+STATS = []
 
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("Bot.modules." + module_name)
@@ -26,6 +26,9 @@ for module_name in ALL_MODULES:
     
     if hasattr(imported_module, "__help__") and imported_module.__help__:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
+        
+    if hasattr(imported_module, "__stats__"):
+        STATS.append(imported_module)
 
 
 def send_help(chat_id, text, keyboard=None):

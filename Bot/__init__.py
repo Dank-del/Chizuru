@@ -2,7 +2,6 @@ from Bot.config import Development as Config
 import logging
 import sys
 import telegram.ext as tg
-import pymongo
 import time
 
 StartTime = time.time()
@@ -23,7 +22,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     quit(1)
 
 TOKEN = Config.TOKEN
-MONGO_CLIENT = pymongo.MongoClient(Config.MONGO_URI)
+DB_URI = Config.DB_URI
 OWNER_ID = Config.OWNER_ID
 
 updater = tg.Updater(TOKEN, use_context=True)

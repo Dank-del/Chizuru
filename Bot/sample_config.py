@@ -1,7 +1,7 @@
 class Config(object):
     LOGGER = True
     TOKEN = ""
-    MONGO_URI = ""
+    DB_URI = ""
     OWNER_ID = 895373440
 
 
