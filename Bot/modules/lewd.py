@@ -401,6 +401,22 @@ def baka(update, context):
     msg.reply_video(nekos.img(target))
 
 
+
+@run_async
+def pat(update, context):
+    msg = update.effective_message
+    target = "pat"
+    msg.reply_video(nekos.img(target))
+
+
+@run_async
+def slap(update, context):
+    msg = update.effective_message
+    target = "slap"
+    msg.reply_video(nekos.img(target))
+
+
+
 @run_async
 def dva(update, context):
     msg = update.effective_message
@@ -518,6 +534,8 @@ FOXGIRL_HANDLER = CommandHandler("foxgirl", foxgirl)
 TITSGIF_HANDLER = CommandHandler("titsgif", titsgif)
 ERO_HANDLER = CommandHandler("ero", ero)
 SMUG_HANDLER = CommandHandler("smug", smug)
+PAT_HANDLER = CommandHandler("pat", pat)
+SLAP_HANDLER = CommandHandler("slap", slap)
 BAKA_HANDLER = CommandHandler("baka", baka)
 DVA_HANDLER = CommandHandler("dva", dva)
 
@@ -572,6 +590,8 @@ dispatcher.add_handler(TITSGIF_HANDLER)
 dispatcher.add_handler(ERO_HANDLER)
 dispatcher.add_handler(SMUG_HANDLER)
 dispatcher.add_handler(BAKA_HANDLER)
+dispatcher.add_handler(PAT_HANDLER)
+dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(DVA_HANDLER)
 
 __handlers__ = [
@@ -626,5 +646,7 @@ __handlers__ = [
     ERO_HANDLER,
     SMUG_HANDLER,
     BAKA_HANDLER,
+    PAT_HANDLER,
+    SLAP_HANDLER,
     DVA_HANDLER,
 ]
