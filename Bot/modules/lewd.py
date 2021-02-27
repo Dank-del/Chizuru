@@ -405,7 +405,7 @@ def baka(update, context):
 def dva(update, context):
     msg = update.effective_message
     nsfw = requests.get("https://api.computerfreaker.cf/v1/dva").json()
-    url = nsfw.get("url")
+    url = nsfw.get("url").replace("\/", "/")
     # do shit with url if you want to
     if not url:
         msg.reply_text("No URL was received from the API!")
