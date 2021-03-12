@@ -402,6 +402,13 @@ def baka(update, context):
 
 
 @run_async
+def pat(update, context):
+    msg = update.effective_message
+    target = "pat"
+    msg.reply_video(nekos.img(pat))
+
+
+@run_async
 def dva(update, context):
     msg = update.effective_message
     nsfw = requests.get("https://api.computerfreaker.cf/v1/dva").json()
@@ -519,6 +526,7 @@ TITSGIF_HANDLER = CommandHandler("titsgif", titsgif)
 ERO_HANDLER = CommandHandler("ero", ero)
 SMUG_HANDLER = CommandHandler("smug", smug)
 BAKA_HANDLER = CommandHandler("baka", baka)
+PAT_HANDLER = CommandHandler("pat", pat)
 DVA_HANDLER = CommandHandler("dva", dva)
 
 dispatcher.add_handler(LEWDKEMO_HANDLER)
@@ -572,6 +580,7 @@ dispatcher.add_handler(TITSGIF_HANDLER)
 dispatcher.add_handler(ERO_HANDLER)
 dispatcher.add_handler(SMUG_HANDLER)
 dispatcher.add_handler(BAKA_HANDLER)
+dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(DVA_HANDLER)
 
 __handlers__ = [
@@ -626,5 +635,6 @@ __handlers__ = [
     ERO_HANDLER,
     SMUG_HANDLER,
     BAKA_HANDLER,
+    PAT_HANDLER,
     DVA_HANDLER,
 ]
